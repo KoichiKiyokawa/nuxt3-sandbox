@@ -1,4 +1,5 @@
 {
+  "name": "nuxt3-sandbox",
   "private": true,
   "scripts": {
     "dev": "nuxt dev",
@@ -6,6 +7,7 @@
     "start": "node .output/server"
   },
   "devDependencies": {
+    "nuxt-windicss": "^1.2.5",
     "nuxt3": "latest"
   }
 }

@@ -5,6 +5,8 @@ export default defineNuxtConfig({
   alias: {
     "~": resolve(__dirname, "./src"),
   },
+  buildModules: ["nuxt-windicss"],
+  css: ["virtual:windi.css"],
   srcDir: "src",
   ssr: false,
 })
