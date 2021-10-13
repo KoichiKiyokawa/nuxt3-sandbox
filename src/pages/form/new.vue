@@ -3,6 +3,12 @@ import { useSessionStorage } from "@vueuse/core"
 const route = useRoute()
 const router = useRouter()
 
+/**
+ * 以下の3パターンが考えられる
+ * modeクエリがない: indexから遷移してきた
+ * mode=form: 確認画面から戻ってきた
+ * mode=confirm: フォームから確認画面へ移動した
+ */
 type Query = { mode: "form" | "confirm" }
 
 const mode = ref<Query["mode"]>("form")
