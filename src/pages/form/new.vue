@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { useSessionStorage } from "@vueuse/core"
 const route = useRoute()
 const router = useRouter()
 
@@ -9,26 +10,26 @@ watchEffect(() => {
   mode.value = (route.query.mode as Query["mode"]) || "form"
 })
 
-const sessionStorageKey = "form-new"
 type Form = { name: string; email: string; address: string }
+const getEmptyForm = (): Form => ({ name: "", email: "", address: "" })
+const store = useSessionStorage<Form>("form-new", getEmptyForm())
 
 const form = reactive<Form>(
-  route.query.mode
-    ? JSON.parse(sessionStorage.getItem(sessionStorageKey) || "{}")
-    : { email: "", address: "", name: "" }
+  // indexから遷移してきたとき(?mode=クエリがない)はフォームに初期値をセットしない
+  route.query.mode ? store.value : { email: "", address: "", name: "" }
 )
 
 if (mode.value === "confirm" && Object.keys(form).length === 0)
   router.push("/form/new")
 
 const gotoConfirm = () => {
-  sessionStorage.setItem(sessionStorageKey, JSON.stringify(form))
+  store.value = form
   mode.value = "confirm"
   router.push("?mode=confirm")
 }
 
 const onSubmit = () => {
-  console.log("ok")
+  console.log(form)
 }
 </script>
 
