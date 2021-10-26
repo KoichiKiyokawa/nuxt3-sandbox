@@ -7,12 +7,15 @@
     "start": "node .output/server"
   },
   "devDependencies": {
-    "nuxt-windicss": "^1.2.5",
-    "nuxt3": "^3.0.0-27246961.9d40a27"
+    "nuxt-windicss": "^2.0.7",
+    "nuxt3": "^3.0.0-27252999.d2cc9e4"
   },
   "dependencies": {
     "@vuelidate/core": "^2.0.0-alpha.27",
     "@vuelidate/validators": "^2.0.0-alpha.23",
     "@vueuse/core": "^6.5.3"
+  },
+  "volta": {
+    "node": "16.12.0"
   }
 }
