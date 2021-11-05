@@ -8,7 +8,7 @@
   },
   "devDependencies": {
     "nuxt-windicss": "^2.0.7",
-    "nuxt3": "^3.0.0-27252999.d2cc9e4"
+    "nuxt3": "^3.0.0-27267816.6bd7186"
   },
   "dependencies": {
     "@vuelidate/core": "^2.0.0-alpha.27",
