@@ -4,5 +4,6 @@ type User = {
   email: string
 }
 
-export const useCurrentUser = () =>
-  useState<User | null>("currentUser", () => null)
+export function useCurrentUser() {
+  return useState<User | null>("currentUser", () => null)
+}

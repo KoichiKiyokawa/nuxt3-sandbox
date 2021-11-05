@@ -17,18 +17,20 @@ const setUser = () => {
 </script>
 
 <template>
-  <MoleculesCounter
-    v-for="(counter, i) in counters"
-    :key="i"
-    v-model:count="counter.count"
-    v-model:text="counter.text"
-    @delete="deleteCounter(i)"
-  />
+  <div>
+    <MoleculesCounter
+      v-for="(counter, i) in counters"
+      :key="i"
+      v-model:count="counter.count"
+      v-model:text="counter.text"
+      @delete="deleteCounter(i)"
+    />
 
-  <button @click="addCounter">add counter</button>
+    <button @click="addCounter">add counter</button>
 
-  <button @click="setUser" class="block bg-blue-400 p-2 text-white rounded">
-    set current user ({{ currentUser?.name }})
-  </button>
-  <NuxtLink to="/users">users</NuxtLink>
+    <button @click="setUser" class="block bg-blue-400 p-2 text-white rounded">
+      set current user ({{ currentUser?.name }})
+    </button>
+    <NuxtLink to="/users">users</NuxtLink>
+  </div>
 </template>
